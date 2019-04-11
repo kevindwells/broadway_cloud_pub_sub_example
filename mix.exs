@@ -22,7 +22,7 @@ defmodule PubSubExample.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:broadway_cloud_pub_sub, git: "https://github.com/mcrumm/broadway_cloud_pub_sub.git", branch: "master"},
+      {:broadway_cloud_pub_sub, "~> 0.1.0"},
       {:goth, "~> 0.11"}
     ]
   end

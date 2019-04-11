@@ -1,6 +1,6 @@
 %{
   "broadway": {:hex, :broadway, "0.2.0", "b92703f9b0bca9bc8aa201ea6ab70be9ca53ed74b47674b340f445a218a3427b", [:mix], [{:gen_stage, "~> 0.14", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},
-  "broadway_cloud_pub_sub": {:git, "https://github.com/mcrumm/broadway_cloud_pub_sub.git", "147e17afe184f6609091f7d0c52e32983317cda2", [branch: "master"]},
+  "broadway_cloud_pub_sub": {:hex, :broadway_cloud_pub_sub, "0.1.2", "894dbd9c3006cbdb539ac2c1006ce287104fd3002de662085e903f4fb8e420f4", [:mix], [{:broadway, "~> 0.2.0", [hex: :broadway, repo: "hexpm", optional: false]}, {:google_api_pub_sub, "~> 0.4.0", [hex: :google_api_pub_sub, repo: "hexpm", optional: false]}, {:goth, "~> 0.6", [hex: :goth, repo: "hexpm", optional: true]}], "hexpm"},
   "certifi": {:hex, :certifi, "2.5.1", "867ce347f7c7d78563450a18a6a28a8090331e77fa02380b4a21962a65d36ee5", [:rebar3], [{:parse_trans, "~>3.3", [hex: :parse_trans, repo: "hexpm", optional: false]}], "hexpm"},
   "gen_stage": {:hex, :gen_stage, "0.14.1", "9d46723fda072d4f4bb31a102560013f7960f5d80ea44dcb96fd6304ed61e7a4", [:mix], [], "hexpm"},
   "google_api_pub_sub": {:hex, :google_api_pub_sub, "0.4.0", "b89957f47f16337b9fd936e12fcacab53440350edef9161a2ae877f014cbb087", [:mix], [{:google_gax, "~> 0.1.0", [hex: :google_gax, repo: "hexpm", optional: false]}], "hexpm"},
