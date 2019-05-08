@@ -96,6 +96,19 @@ iex(2)>
 16:18:58.625 [debug] Received message from Cloud Pub/Sub: %Broadway.Message{acknowledger: {BroadwayCloudPubSub.GoogleApiClient, {BroadwayCloudPubSub.GoogleApiClient, #Reference<0.2672907561.3027763201.127864>}, "projects/example-project/subscriptions/example-subscription:8"}, batch_key: :default, batcher: :default, data: %GoogleApi.PubSub.V1.Model.PubsubMessage{attributes: nil, data: "aGVsbG8sIHdvcmxkMQ==", messageId: "4", publishTime: #DateTime<2019-04-10 23:18:58Z>}, status: :ok}
 ```
 
+**Message Attributes**
+
+You can also publish a message with just attributes:
+```sh
+iex(1)> PubSubExample.publish(%{"foo" => "bar"})
+```
+
+or, publish a message and attributes:
+
+```sh
+iex(1)> PubSubExample.publish({"Hello, Pub/Sub!", %{"foo" => "bar"}})
+```
+
 Broadway automatically takes care of acknowledging the message for you. If you're interested in learning how to handle failed messages, or to batch messages for more complex processing, see the [Broadway](https://hexdocs.pm/broadway) docs for more information.
 
 Happy coding!

@@ -41,4 +41,20 @@ defmodule PubSubExample do
       :ok
     end
   end
+
+  def publish(attrs) when is_map(attrs) do
+    topic_id = get_env(PubSubExample.SetupTask)[:topic_id]
+
+    with {:ok, _} <- PubSubExample.Client.publish_message(topic_id, nil, attrs) do
+      :ok
+    end
+  end
+
+  def publish({message, attrs}) when is_binary(message) and is_map(attrs) do
+    topic_id = get_env(PubSubExample.SetupTask)[:topic_id]
+
+    with {:ok, _} <- PubSubExample.Client.publish_message(topic_id, message, attrs) do
+      :ok
+    end
+  end
 end

@@ -48,12 +48,15 @@ defmodule PubSubExample.Client do
     pubsub_projects_subscriptions_get(conn(), project_id(), subscription_id)
   end
 
-  def publish_message(topic_id, message) do
+  def publish_message(topic_id, message, attrs \\ nil) do
+    data = if is_nil(message), do: nil, else: Base.encode64(message)
+
     # Build the PublishRequest struct
     request = %GoogleApi.PubSub.V1.Model.PublishRequest{
       messages: [
         %GoogleApi.PubSub.V1.Model.PubsubMessage{
-          data: Base.encode64(message)
+          data: data,
+          attributes: attrs
         }
       ]
     }
